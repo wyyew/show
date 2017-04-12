@@ -1,0 +1,48 @@
+body{background-color: #f6f6f6;}
+.login_panel{
+  background:#fff url(img/Group.png) no-repeat 100% 45%;
+  background-size:contain;
+  margin:150px 0 2%;
+  width:100%;
+  height:600px;
+  background-size: auto 60%;
+  border-radius: 16px;
+  background-origin:border-box;
+}
+.login_red{
+  width:100%;
+  background: linear-gradient(to right, #ec5051 50% ,rgba(0, 0, 0, 0) 50%);
+  border-radius: 16px;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .login_copname{
+    background:url(img/logo.png) no-repeat;
+    width:57px;
+    height:38px;
+  }
+}
+.login_copname,.login_title{
+  position: absolute;
+  top:45px;
+  left:45px;
+}
+.login_title{
+  top:50%;
+}
+.login_into{
+  position: absolute;
+  left:50%;
+  bottom:0;
+font-size: 12px;
+color: #333;
+line-height: 20px;
+padding:0 0 10px 20px;
+p.login_into_con{
+  display: flex;
+  justify-content: space-between;
+}
+
+}

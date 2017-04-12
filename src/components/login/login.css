@@ -1,0 +1,32 @@
+#loginwrap{
+  background: #fff;
+box-shadow: 3px 0 4px 0 rgba(0,0,0,0.20);
+border-radius: 13px;
+  padding:10% 15% 6%;
+  width:400px;
+  overflow: hidden;
+}
+#loginwrap h2{
+  font-size: 20px;
+  color: #252525;
+  text-align: center;
+  padding-bottom: 10%;
+}
+.login-form {
+	  max-width: 280px;
+    width:280px;
+    margin:0 auto;
+    line-height: 40px;
+	}
+	.login-form-forgot {
+	  float: right;
+	}
+	.login-form-button {
+	  width: 100%;
+	}
+.ant-btn-primary{background-color: #d84942;
+    border-color: #eaeaea;}
+.ant-btn-primary:hover, .ant-btn-primary:focus{
+  background: #d84942;
+  border: 1px solid #eaeaea;
+}
