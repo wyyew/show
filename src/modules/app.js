@@ -3,59 +3,83 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { Router, Route, IndexRoute, browserHistory, Link } from 'react-router';
 import reducers from '../common/js/reducers/index';
 import '../common/css/common.scss';
 //Component
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
+import Head from '../components/header/header'
+import Foot from '../components/footer/footer'
+
 // pages
 import Page1 from '../components/component1/index';
-import Page2 from '../components/component2/index';
-import Page3 from '../components/component3/index';
+import Cont from './order/componentcontent'
+import Login from './login/exlogin'
+import Example from './example/example'
+//reducers
+import products from './order/productlist/reducer'
+const rootReducer = combineReducers({
+    products,
+    reducers
+});
+const initState = {products:[{
+ key: '1',
+ cproductidcode: 'John Brown',
+ cproductidname: 32,
+ materialspec: 'New York No. 1 Lake Park',
+ nqtorigtaxnetprc:'¥240',
+ nodunitnum: 'John Brown',
+ nqtunitnum: 32,
+ nnabnum: 'New York No. 1 Lake Park',
+ norigtaxmny:'¥240',
+}, {
+ key: '2',
+ cproductidcode: 'Jim Green',
+ cproductidname: 42,
+ materialspec: 'London No. 1 Lake Park',
+ nqtorigtaxnetprc:'¥240',
+ nodunitnum: 'John Brown',
+ nqtunitnum: 32,
+ nnabnum: 'New York No. 1 Lake Park',
+ norigtaxmny:'¥240',
+}, {
+ key: '3',
+ cproductidcode: 'Joe Black',
+ cproductidname: 32,
+ materialspec: 'Sidney No. 1 Lake Park',
+ nqtorigtaxnetprc:'¥240',
+ nodunitnum: 'John Brown',
+ nqtunitnum: 32,
+ nnabnum: 'New York No. 1 Lake Park',
+ norigtaxmny:'¥240',
+}]};
+
 
 class Application extends Component {
   render() {
     return (
       <div>
-        <MuiThemeProvider muiTheme={getMuiTheme()}>
-          <AppBar
-            title="ecp-portal-static"
-            iconClassNameRight="muidocs-icon-navigation-expand-more"/>
-        </MuiThemeProvider>
-        <NavList />
+        <Head />
+          {this.props.children}
+        <Foot />
       </div>
     );
   }
 };
-class NavList extends Component {
-  render() {
-    return (
-      <div>
-        <div className="header">
-          <Link to="page1">page1</Link>
-          <Link to="page2">page2</Link>
-          <Link to="page3">page3</Link>
-        </div>
-        {this.props.children}
-      </div>
-    );
-  }
-};
-const store = createStore(reducers, {}, applyMiddleware(thunk));
+const store = createStore(rootReducer, initState, applyMiddleware(thunk));
+
+console.log(store.getState())
 
 render((
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={NavList}>
+      <Route path="/" component={Application}>
         <IndexRoute component={Page1}/>
-        <Route path="page1" component={Page1}></Route>
-        <Route path="page2" component={Page2}></Route>
-        <Route path="page3" component={Page3}></Route>
+        <Route path="counter" component={Cont}/>
+        <Route path="examples(/:name)" component={Example} />
       </Route>
+      <Route path="login" component={Login} />
     </Router>
   </Provider>
 ), document.getElementById('app'));

@@ -1,16 +1,2 @@
-#order .ant-layout-header{background:#ececec;height:auto;line-height:40px;padding:0}
-#order .ant-menu-dark, .ant-menu-dark .ant-menu-sub, .self-bar{background:#ec5050;}
-.self-bar{padding:0 100px;}
-.ant-menu-dark.ant-menu-horizontal{border:0;}
-.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu-dark.ant-menu-horizontal{border-bottom-color:#ececec;}
-.ant-layout-header .logo {
-  width: 184px;
-  height: 20px;
-  background: #333;
-  border-radius: 6px;
-  margin: 16px 24px 16px 100px;
-  background:url(../../common/img/logo.png) no-repeat;
-  background-size:184px auto;
-}
-.orderform{border:1px solid #d8d8d8;background-color: #fff;padding:0 20px;}
+.orderform{border:1px solid #d8d8d8;background-color:#fff;padding:0 20px;}
 .ant-form-item,.ant-form-item-label label{color:#333;}

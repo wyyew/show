@@ -3,6 +3,7 @@ import {
   Form, Select, Input, InputNumber, Switch, Radio,
   Slider, Button, Upload, Tooltip, Icon, Collapse, Layout, Row, Col, DatePicker  } from 'antd';
 const Panel = Collapse.Panel;
+import './order.css';
 
 import MyUpload from '../../components/upload/upload'
 import Products from './productlist/container'

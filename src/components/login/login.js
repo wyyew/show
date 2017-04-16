@@ -1,10 +1,12 @@
 // application's entry
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import { browserHistory } from 'react-router';
 import { Form, Icon, Input, Button, Row, Col, Checkbox, message } from 'antd';
 const FormItem = Form.Item;
 import 'antd/dist/antd.css';
 import './login.css';
+
 
 class NormalLoginForm extends Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class NormalLoginForm extends Component {
     e.preventDefault();
 
     this.props.form.resetFields()
+    browserHistory.push('/')
     // this.props.form.validateFields((err, values) => {
     //   if (!err) {
     //     console.log('Received values of form: ', values);
@@ -48,7 +51,7 @@ class NormalLoginForm extends Component {
     return (
       <div id="loginwrap">
         <h2>欢迎登录</h2>
-      <Form horizontal onSubmit={this.handleSubmit.bind(this)} className="login-form">
+      <Form layout="horizontal" onSubmit={this.handleSubmit.bind(this)} className="login-form">
         <FormItem>
           {getFieldDecorator('userName', {
             rules: [{ required: true, message: '请输入用户名' }],

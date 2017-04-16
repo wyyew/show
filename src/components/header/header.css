@@ -1,0 +1,14 @@
+#app .ant-layout-header{background:#ececec;height:auto;line-height:40px;padding:0}
+#app .ant-menu-dark, #app .ant-menu-dark .ant-menu-sub, .self-bar{background:#ec5050;}
+.self-bar{padding:0 100px;}
+#app .ant-menu-dark.ant-menu-horizontal{border:0;}
+#app .ant-menu-dark, #app .ant-menu-dark .ant-menu-sub, #app .ant-menu-dark.ant-menu-horizontal{border-bottom-color:#ececec;}
+#app .ant-layout-header .logo {
+  width: 184px;
+  height: 20px;
+  background: #333;
+  border-radius: 6px;
+  margin: 16px 24px 16px 100px;
+  background:url(../../common/img/logo.png) no-repeat;
+  background-size:184px auto;
+}

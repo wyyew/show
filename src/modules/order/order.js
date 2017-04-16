@@ -7,7 +7,7 @@ import products from './productlist/reducer'
 import Head from '.. /../components/header/header'
 import Foot from '../../components/footer/footer'
 import Cont from './componentcontent'
-import './order.css';
+1
 const mountNode = document.getElementById('order');
 const rootReducer = combineReducers({
     products
