@@ -49,50 +49,51 @@ const ProductList = ({ onDelete, products, onDeleteAll }) => {
     )
   }
 
-  const columns = [{
+  const columns = [
+    {
     title: '商品编码',
     dataIndex: 'cproductidcode',
     key: 'cproductidcode',
     render: text => <a href="#">{text}</a>,
-  }, {
-    title: '商品名称',
-    dataIndex: 'cproductidname',
-    key: 'cproductidname',
-  }, {
-    title: '规格',
-    dataIndex: 'materialspec',
-    key: 'materialspec',
-  },{
-    title:'价格',
-    dataIndex:'nqtorigtaxnetprc',
-    key:'nqtorigtaxnetprc'
-  },{
-    title:'订货数量',
-    dataIndex:'nodunitnum',
-    key:'nodunitnum'
-  },{
-    title:'报价数量',
-    dataIndex:'nqtunitnum',
-    key:'nqtunitnum'
-  },{
-    title:'库存',
-    dataIndex:'nnabnum',
-    key:'nnabnum'
-  },{
-    title:'金额',
-    dataIndex:'norigtaxmny',
-    key:'norigtaxmny'
-  }, {
-    title: '操作',
-    key: 'action',
-    render: (text, record) => {
-      return (
-        <Popconfirm title="Delete?" onConfirm={() => onDelete(record.key)}>
-          <Button>删除</Button>
-        </Popconfirm>
-      );
+    }, {
+      title: '商品名称',
+      dataIndex: 'cproductidname',
+      key: 'cproductidname',
+    }, {
+      title: '规格',
+      dataIndex: 'materialspec',
+      key: 'materialspec',
+    },{
+      title:'价格',
+      dataIndex:'nqtorigtaxnetprc',
+      key:'nqtorigtaxnetprc'
+    },{
+      title:'订货数量',
+      dataIndex:'nodunitnum',
+      key:'nodunitnum'
+    },{
+      title:'报价数量',
+      dataIndex:'nqtunitnum',
+      key:'nqtunitnum'
+    },{
+      title:'库存',
+      dataIndex:'nnabnum',
+      key:'nnabnum'
+    },{
+      title:'金额',
+      dataIndex:'norigtaxmny',
+      key:'norigtaxmny'
+    }, {
+      title: '操作',
+      key: 'action',
+      render: (text, record) => {
+        return (
+          <Popconfirm title="Delete?" onConfirm={() => onDelete(record.key)}>
+            <Button>删除</Button>
+          </Popconfirm>
+        );
+      }
     }
-  }
   ];
 
   return (
