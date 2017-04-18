@@ -12,7 +12,7 @@ const Head = () => {
       <Menu
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={['3']}
+        defaultSelectedKeys={['1']}
       >
         <Menu.Item key="1"><Link to="/">首页</Link></Menu.Item>
         <Menu.Item key="2">商品中心</Menu.Item>

@@ -7,8 +7,8 @@ export default class Page1 extends Component {
     return (
       <div className="page1">
       <ul>
-        <li><Link to="counter">Counter</Link></li>
-        <li><Link to="examples">examples</Link></li>
+        <li><Link to="/counter">Counter</Link></li>
+        <li><Link to="/examples/counter">examples</Link></li>
       </ul>
       </div>
 
