@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProductList from './component';
+
 const Products = ({ dispatch, products }) => {
   function handleDelete(key) {
     dispatch({
