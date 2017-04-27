@@ -8,6 +8,11 @@ export default class TestThis extends React.Component {
   // }
   handler() {
     console.log(`handler${suffix}`, this);
+    const p1 = new Promise((resolve, reject) => {resolve('成功！')});
+    p1.then(value => {
+      console.log(value);
+      throw '哦，不！';
+    }).catch(e => console.log(e))
   }
   render() {
     console.log(`render${suffix}`, this);
