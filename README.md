@@ -14,6 +14,8 @@ react项目脚手架
 > 快速开始
 
 ```
+git clone git@github.com:wyyew/show.git
+cd show
 $ npm install
 $ npm start
 ```
