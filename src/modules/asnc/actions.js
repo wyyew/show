@@ -30,7 +30,7 @@ export function receivePosts(reddit, json) {
   return {
     type: RECEIVE_POSTS,
     reddit,
-    posts: json.data.children.map(child => child.data),
+    posts: json.map(child => child),
     receivedAt: Date.now(),
   };
 }

@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
-import { selectReddit, invalidateReddit } from './actions'
+import { selectReddit, invalidateReddit, fetchPostsIfNeeded } from './actions'
 import Picker from './components/Picker'
 import Posts from './components/Posts'
 
@@ -10,7 +11,6 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleRefreshClick = this.handleRefreshClick.bind(this)
   }
-
   handleChange(nextReddit) {
     this.props.dispatch(selectReddit(nextReddit))
   }
@@ -20,9 +20,7 @@ class App extends Component {
     const { dispatch, selectedReddit } = this.props
     dispatch(invalidateReddit(selectedReddit))
   }
-
   render() {
-      console.log(this.props);
     const { selectedReddit, posts, isFetching, lastUpdated } = this.props;
     return (
       <div>

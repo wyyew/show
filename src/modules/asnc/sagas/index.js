@@ -8,7 +8,6 @@ export function fetchPostsApi(reddit) {
     return fetch(`http://www.reddit.com/r/${reddit}.json` )
             .then(response => response.json().then(json => ({ json, response })))
             .then(({json, response}) => {
-              console.log(response)
               if (!response.ok) {
                 return Promise.reject(json)
               }
@@ -17,9 +16,9 @@ export function fetchPostsApi(reddit) {
 }
 
 export function* fetchPosts(reddit) {
-  yield put( actions.requestPosts(reddit) )
-  const posts = yield call(fetchPostsApi, reddit)
-  yield put( actions.receivePosts(reddit, posts) )
+  yield put( actions.requestPosts(reddit));
+  const posts = yield call(fetchPostsApi, reddit);
+  yield put( actions.receivePosts(reddit, posts) );
 }
 
 export function* invalidateReddit() {
