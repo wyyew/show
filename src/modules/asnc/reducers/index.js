@@ -19,7 +19,7 @@ function postsstate({
 }, action) {
   switch(action.type) {
     case INVALIDATE_REDDIT:
-      return Object.assing({}, state, {
+      return Object.assign({}, state, {
         didInvalidate:true,
       });
     case REQUEST_POSTS:
