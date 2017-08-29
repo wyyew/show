@@ -12,7 +12,7 @@ function selectedReddit(state = 'reactjs', action) {
   }
 }
 
-function postsstate = {
+function postsstate({
   isFetching: false,
   didInvalidate: false,
   items: []
